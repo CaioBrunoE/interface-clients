@@ -1,0 +1,49 @@
+<div class="bg-light vh-100 vw-100 container-fluid p-2">
+  <div class="container">
+    <div class="bg-purple p-1 shadow p-1 mb-2 rounded text-center text-white">
+      <h3 class="font-weight-bold" >Clientes Cadastrados</h3>
+    </div>
+    <form class="d-flex" role="search">
+      <input class="form-control w-25" type="search" placeholder="pesquisa" [(ngModel)]="searchValue" name="search">
+    </form>
+    <table class="table row-12 mt-1">
+      <thead>
+          <th>Name</th>
+          <th>Email</th>
+          <th>CPF</th>
+          <th>Cel</th>
+          <th>Registry User</th>
+          <th>Create</th>
+          <th>update</th>
+      </thead>
+      <tbody class="shadow mt-2">
+        <tr *ngFor="let client of clients |async| searchfilter:searchValue |paginate:{itemsPerPage:5, currentPage: paginaAtual }; let i = index">
+          <td>{{client.name}}</td>
+          <td>{{client.email}}</td>
+          <td>{{client.cpf}}</td>
+          <td>{{client.cel}}</td>
+          <td>{{client.registryUser}}</td>
+          <td>{{client.created |date:'dd/MM/yyyy'}}</td>
+          <td>{{client.updated |date:'dd/MM/yyyy'}}</td>
+          <td>
+          <div class="d-flex">
+            <button (click)="deleteClient(client.id, client.name)" class="btn btn-danger">Delete</button>
+            <button (click)="clientDetails(client.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          </div>
+          </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination ms-5">
+    <pagination-controls (pageChange)="paginaAtual=$event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+  </div>
+  <div *ngIf="showAlert" class="bg-modal">
+    <div class="div-alert alert alert-success alert-dismissible fade show" role="alert" >
+        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Fechar" (click)="showAlert=false"></button>
+        <div class="mt-4">
+          <p> Deletado com sucesso!</p>
+        </div>
+    </div>
+  </div>
+</div>

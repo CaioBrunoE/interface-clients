@@ -1,0 +1,17 @@
+a{
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.colobtn:hover{
+  background-color: rgb(161, 72, 245);
+}
+
+li{
+  list-style: none;
+}
+p{
+  text-transform: uppercase;
+}
+.offcanvas-custom-size{
+   width: 250px;
+}

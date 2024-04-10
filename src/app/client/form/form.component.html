@@ -1,0 +1,55 @@
+<div class="bg-light vh-100 vw-100 container-fluid mt-2 ">
+  <div *ngIf="showAlert" id="meuAlerta" class="alert alert-warning alert-dismissible fade show container" role="alert">
+    Selecione que você está de acordo com os dados preenchidos!
+    <button type="button" class="btn-close" (click)="closeAlert()" aria-label="Fechar">
+    </button>
+  </div>
+ <div [hidden]="submitted" class="d-flex justify-content-center p-2 container shadow mb-2 rounded bg-light">
+  <form class="row g-3 container " (ngSubmit)="onSubmit()" >
+ <div class="bg-purple p-1 shadow p-1 mb-5 rounded text-center text-white">
+   <h3>Register clients</h3>
+</div>
+  <div class="col-md-6">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Client de Oliveira"
+    required [(ngModel)]="client.name" name="clientName">
+  </div>
+  <div class="col-md-6">
+    <label for="cpf" class="form-label">CPF</label>
+    <input type="number" class="form-control" id="cpf" placeholder="111-222-333-44"
+    required [(ngModel)]="client.cpf" name="clientCpf">
+  </div>
+  <div class="col-6">
+    <label for="inputAddress" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputAddress" placeholder="example@email.com"
+    required [(ngModel)]="client.email" name="clientEmail">
+  </div>
+  <div class="col-6">
+    <label for="Cel" class="form-label">Cel</label>
+    <input type="text" class="form-control" id="Cel" placeholder="(31)9 9999-8888"
+    required [(ngModel)]="client.cel">
+  </div>
+  <div class="col-md-4">
+    <label for="registryUser" class="form-label">Registry User</label>
+    <select id="registryUser" class="form-select" required [(ngModel)]="client.registryUser" name="clientRegistryUser">
+      <option selected>ADMIN</option>
+      <option>USER</option>
+    </select>
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck" (click)="toggleCheckbox()" required>
+      <label class="form-check-label" for="gridCheck" >
+        Estou de acordo com as informaçoes!
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary ">Enviar</button>
+  </div>
+</form>
+</div>
+</div>
+
+
+

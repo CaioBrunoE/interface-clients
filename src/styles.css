@@ -1,0 +1,32 @@
+*{
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+
+}
+
+body {
+  overflow-x: hidden;
+}
+h1{
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+}
+p{
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.color-purple{
+  color: #573d7d;
+}
+
+.bg-purple{
+  background-color: #573d7d;
+}
+.bg-blue{
+  background-color: #8dacc4;
+}

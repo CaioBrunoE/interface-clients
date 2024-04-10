@@ -1,0 +1,40 @@
+  <nav class="navbar bg-purple text-white vw-100">
+    <p class="text-center mx-2">Sistema de Clientes</p>
+    <button class="btn mx-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+  </nav>
+<div class="offcanvas offcanvas-end bg-purple text-white offcanvas-custom-size" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-purple vh-100 " >
+    <a routerLink="/" class="vw-100 align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <span class="fs-4 text-center">Sistema de Clientes</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link text-white colobtn" aria-current="page">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+          Home
+        </a>
+      </li>
+      <li>
+        <a routerLink="/" class="nav-link text-white colobtn">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+          Listar Clientes
+        </a>
+      </li>
+      <li>
+        <a routerLink="form" class="nav-link text-white colobtn">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+          Cadatrar Clientes
+        </a>
+      </li>
+    </ul>
+    <hr>
+    <div class="dropdown">
+      <a href="#" class=" d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        Configuração
+      </a>
+    </div>
+  </div>
+</div>

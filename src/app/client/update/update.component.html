@@ -1,0 +1,49 @@
+<div class="vh-100 vw-100 d-flex justify-content-center container">
+<div [hidden]="submitted" class="div-update">
+  <div class="bg-purple p-1 shadow p-1 mb-2 rounded text-center text-white mt-2">
+  <h3>Update</h3>
+  </div>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="client.name" name="clientName" placeholder="{{client.name}}">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" required [(ngModel)]="client.email" name="clientEmail">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Cpf</label>
+      <input type="text" class="form-control" id="cpf" required [(ngModel)]="client.cpf" name="clientCpf">
+    </div>
+
+    <div class="form-group">
+      <label for="name">cel</label>
+      <input type="text" class="form-control" id="cel" required [(ngModel)]="client.cel" name="clientCel">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Registry User</label>
+      <select id="registryUser" class="form-select" required [(ngModel)]="client.registryUser" name="clientRegistryUser">
+        <option selected>ADMIN</option>
+        <option>USER</option>
+      </select>
+    </div>
+  <div class="d-flex justify-content-around ">
+    <button type="submit" class="btn btn-info">Submit</button>
+    <button type="button" routerLink="/" class="btn btn-danger ">Cancel</button>
+  </div>
+  </form>
+</div>
+<div *ngIf="showAlert" class="bg-modal ">
+<div class="div-alert alert alert-success alert-dismissible fade show" role="alert" >
+    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Fechar" (click)="close()"></button>
+    <div class="mt-4">
+      <p> Deseja atualizar Cliente?</p>
+    </div>
+    <button type="button" class="btn btn-success" (click)="accept()">Confirm</button>
+</div>
+</div>
+</div>
